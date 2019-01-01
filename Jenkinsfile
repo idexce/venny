@@ -11,6 +11,6 @@ node {
                 sh 'docker push idexcelinterns/nodejs:latest'
         }
 	stage('Force Deploy') {
-                sh 'aws ecs update-service --cluster Dev-MicroservicesCluster --service Dev-microservices-FirstServiceStack-1TX7WOWUN13BI-Service-CWBT959HS5HZ --force-new-deployment'
+                sh 'aws ecs update-service --region us-east-1 --cluster Dev-MicroservicesCluster --service Dev-microservices-FirstServiceStack-1TX7WOWUN13BI-Service-CWBT959HS5HZ --force-new-deployment'
         }
 }
