@@ -8,7 +8,7 @@ app.get('/', function (req, res) {
 })
 
 app.get('/node', function (req, res) {
-  res.send('Hello....!!!!!')
+  res.send('Hello node....!!!!!')
 })
 
 app.get('/application', function (req, res) {
