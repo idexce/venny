@@ -11,9 +11,11 @@ node {
                 sh 'docker push idexcelinterns/nodejs:latest'
         }
 	stage('Force Deploy') {
-                sh 'aws ecs update-service --region us-east-1 --cluster Dev-MicroservicesCluster --service Dev-microservices-FirstServiceStack-CNYYUP6SLXJ6-Service-1K9E35PGHLH81 --force-new-deployment'
+                sh 'aws ecs update-service --region us-east-1 --cluster Dev-MicroservicesCluster --service Dev-microservices-FirstServiceStack-RD0WV46FLYEU-Service-1EB1C3NS7KDHJ --force-new-deployment'
         }
+	
+	
 	stage('service status') {
-	        sh  'aws ecs wait services-stable --service Dev-microservices-FirstServiceStack-CNYYUP6SLXJ6-Service-1K9E35PGHLH81 --region us-east-1 --cluster Dev-MicroservicesCluster'
+	        sh  'aws ecs wait services-stable --service Dev-microservices-FirstServiceStack-RD0WV46FLYEU-Service-1EB1C3NS7KDHJ --region us-east-1 --cluster Dev-MicroservicesCluster'
 	}	
 }
